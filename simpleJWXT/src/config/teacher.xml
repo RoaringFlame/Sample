@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="Teacher" extends="struts-default">
+		<action name="tgetInfo" class="action.teacher.ManageInformation">
+			<result name="information">
+				/teacher\tinformation.jsp
+			</result>
+			<result name="changeInfo">/teacher\tchangeInfo.jsp</result>
+			<result name="saveSuccess">/user\success.jsp</result>
+			<result name="error">/user\error.jsp</result>
+		</action>
+		<action name="lookCourse" class="action.teacher.LookCourse">
+			<result name="allCourse">/teacher\allCourse.jsp</result>
+			<result name="registCourse">
+				/teacher\regiestCourse.jsp
+			</result>
+		</action>
+		<action name="tspageAction" class="action.teacher.TPageAction">
+			<result name="success" type="redirectAction">
+				<param name="pageNumber">${pageNumber}</param>
+				<param name="totalPage">${totalPage}</param>
+				<param name="cid">${cid}</param>
+				<param name="actionName">tAllStudent</param>
+			</result>
+		</action>
+		<action name="tAllStudent" class="action.teacher.LookStudent">
+			<result name="success">/teacher\allstudent.jsp</result>
+		</action>
+		<action name="tscpageAction" class="action.teacher.TPageAction" method="showStudent">
+			<result name="allStudentScore" type="redirectAction">
+				<param name="pageNumber">${pageNumber}</param>
+				<param name="totalPage">${totalPage}</param>
+				<param name="cid">${cid}</param>
+				<param name="cname">${cname}</param>
+				<param name="actionName">studentScore</param>
+			</result>
+		</action>
+		<action name="studentScore" class="action.teacher.LookStudent" method="studentScore">
+			<result name="success">/teacher\logScore.jsp</result>
+		</action>
+		<action name="tdelStudent" class="action.teacher.ManageStudent" method="delStudent">
+			<result name="allStudent" type="redirectAction">
+				<param name="pageNumber">${pageNumber}</param>
+				<param name="cid">${cid}</param>
+				<param name="actionName">tspageAction</param>
+			</result>
+			<result name="input">/user\error.jsp</result>
+		</action>
+		<action name="logScore" class="action.teacher.ManageStudent" method="logScore">
+			<result name="allScore" type="redirectAction">
+				<param name="pageNumber">${pageNumber}</param>
+				<param name="cid">${cid}</param>
+				<param name="actionName">tscpageAction</param>
+			</result>
+			<result name="input">/user\error.jsp</result>
+		</action>
+	</package>
+</struts>    

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="Admin" extends="struts-default">
+		<action name="spageAction" class="action.userManager.PageAction">
+			<result name="allStudent" type="redirectAction">
+				<param name="actionName">allStudent</param>
+				<param name="pageNumber">${pageNumber}</param>
+				<param name="totalPage">${totalPage}</param>
+			</result>
+		</action>
+		<action name="allStudent" class="action.admin.LookAction">
+			<result>/admin\allStudent.jsp</result>
+			<result name="input">/user\error.jsp</result>
+		</action>
+		<action name="addStudent" class="action.admin.SaveStudent">
+			<result name="success">/user\success.jsp</result>
+			<result name="input">/user\error.jsp</result>
+		</action>
+		<action name="delStudent" class="action.admin.DeleteAtion">
+			<result name="success" type="redirectAction">
+				<param name="actionName">spageAction</param>
+				<param name="pageNumber">${pageNumber}</param>
+			</result>
+			<result name="input">/user\error.jsp</result>
+		</action>
+		<action name="updateStudent" class="action.admin.SaveStudent"
+			method="updateStudent">
+			<result name="success" type="redirectAction">
+				<param name="pageNumber">${pageNumber}</param>
+				<param name="actionName">spageAction</param>
+			</result>
+			<result name="input">/user\error.jsp</result>
+		</action>
+		<action name="getAction" class="action.admin.GetAction">
+			<result name="student">/admin\updateStudent.jsp</result>
+			<result name="teacher">/admin\updateTeacher.jsp</result>
+			<result name="course">/admin\updateCourse.jsp</result>
+			<result name="error">/user\error.jsp</result>
+			<result name="getStudent">/admin\getStudent.jsp</result>
+		</action>
+		<action name="tpageAction" class="action.userManager.PageAction"
+			method="allTeacher">
+			<result name="allTeacher" type="redirectAction">
+				<param name="pageNumber">${pageNumber}</param>
+				<param name="totalPage">${totalPage}</param>
+				<param name="actionName">allTeacher</param>
+			</result>
+		</action>
+		<action name="allTeacher" class="action.admin.LookAction"
+			method="allTeacher">
+			<result name="success">/admin\allTeacher.jsp</result>
+			<result name="input">/user\error.jsp</result>
+		</action>
+		<action name="addTeacher" class="action.admin.SaveTeacher">
+			<result name="success">/user\success.jsp</result>
+			<result name="input">/user\error.jsp</result>
+		</action>
+		<action name="delTeacher" class="action.admin.DeleteAtion"
+			method="delTeacher">
+			<result name="success" type="redirectAction">
+				<param name="pageNumber">${pageNumber}</param>
+				<param name="actionName">tpageAction</param>
+			</result>
+			<result name="input">/user\error.jsp</result>
+		</action>
+		<action name="updateTeacher" class="action.admin.SaveTeacher"
+			method="updateTeacher">
+			<result name="success" type="redirectAction">
+				<param name="pageNumber">${pageNumber}</param>
+				<param name="actionName">tpageAction</param>
+			</result>
+			<result name="input">/user\error.jsp</result>
+		</action>
+		<action name="cpageAction" class="action.userManager.PageAction"
+			method="allCourse">
+			<result name="allCourse" type="redirectAction">
+				<param name="pageNumber">${pageNumber}</param>
+				<param name="totalPage">${totalPage}</param>
+				<param name="actionName">allCourse</param>
+			</result>
+		</action>
+		<action name="allCourse" class="action.admin.LookAction"
+			method="allCourse">
+			<result name="success">/admin\allCourse.jsp</result>
+			<result name="input">/user\error.jsp</result>
+		</action>
+		<action name="delCourse" class="action.admin.DeleteAtion"
+			method="delCourse">
+			<result name="success" type="redirectAction">
+				<param name="pageNumber">${pageNumber}</param>
+				<param name="actionName">cpageAction</param>
+			</result>
+			<result name="input">/user\error.jsp</result>
+		</action>
+		<action name="updateCourse" class="action.admin.SaveCourse"
+			method="updateCourse">
+			<result name="success" type="redirectAction">
+				<param name="pageNumber">${pageNumber}</param>
+				<param name="actionName">cpageAction</param>
+			</result>
+			<result name="input">/user\error.jsp</result>
+		</action>
+		<action name="addCourse" class="action.admin.SaveCourse">
+			<result name="success">/user\success.jsp</result>
+			<result name="input">/user\error.jsp</result>
+		</action>
+	</package>
+</struts>    

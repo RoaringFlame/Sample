@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="UserManager" location="111,143" size="372,415">
+    <action name="login" location="98,102" size="163,83">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="loginSuccess.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="index.jsp" />
+      </result>
+      <result name="quit">
+        <resourceEdge source="quit" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="changePassword" location="98,262" size="160,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="success.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="error.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="index.jsp" path="/index.jsp" location="512,270" size="150,55" />
+  <webResource name="loginSuccess.jsp" path="/user\loginSuccess.jsp" location="511,178" size="150,55" />
+  <include file="student.xml" location="64,49" size="150,30" />
+  <include file="teacher.xml" location="238,49" size="150,30" />
+  <include file="admin.xml" location="419,48" size="150,30" />
+  <webResource name="success.jsp" path="/user\success.jsp" location="514,400" size="150,55" />
+  <webResource name="error.jsp" path="/user\error.jsp" location="515,495" size="150,55" />
+</Struts2Diagram>
+

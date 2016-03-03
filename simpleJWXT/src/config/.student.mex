@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="Student" location="246,73" size="549,712">
+    <action name="getInfo" location="123,86" size="134,104">
+      <result name="information">
+        <resourceEdge source="information" routing="0" target="information.jsp" />
+      </result>
+      <result name="changeInfo">
+        <resourceEdge source="changeInfo" routing="0" target="changeInfo.jsp" />
+      </result>
+      <result name="saveSuccess">
+        <resourceEdge source="saveSuccess" routing="0" target="success.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="scpageAction" location="370,184" size="136,41">
+      <result name="allCourse">
+        <resourceEdge source="allCourse" routing="0" target="courseInit" namespace="" />
+      </result>
+    </action>
+    <action name="courseInit" location="224,278" size="136,83">
+      <result name="allCourse">
+        <resourceEdge source="allCourse" routing="0" target="allCourse.jsp" />
+      </result>
+      <result name="showDetail">
+        <resourceEdge source="showDetail" routing="0" target="courseDetail.jsp" />
+      </result>
+      <result name="myCourse">
+        <resourceEdge source="myCourse" routing="0" target="myCourse.jsp" />
+      </result>
+    </action>
+    <action name="chooseCourse" location="223,418" size="136,125">
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="chooseSuccess.jsp" />
+      </result>
+      <result name="haveChoose">
+        <resourceEdge source="haveChoose" routing="0" target="haveChoose.jsp" />
+      </result>
+      <result name="chooseMax">
+        <resourceEdge source="chooseMax" routing="0" target="chooseMax.jsp" />
+      </result>
+      <result name="courseFill">
+        <resourceEdge source="courseFill" routing="0" target="courseFill.jsp" />
+      </result>
+    </action>
+    <action name="cancelCourse" location="222,602" size="133,83">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="success.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="error.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="cancelFail.jsp" />
+      </result>
+    </action>
+    <action name="lookScore" location="368,84" size="136,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="lookScore.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="error.jsp" path="/user\error.jsp" location="40,307" size="150,55" />
+  <webResource name="information.jsp" path="/student\information.jsp" location="40,100" size="150,55" />
+  <webResource name="changeInfo.jsp" path="/student\changeInfo.jsp" location="39,195" size="150,55" />
+  <webResource name="allCourse.jsp" path="/student\allCourse.jsp" location="846,282" size="150,55" />
+  <webResource name="courseDetail.jsp" path="/student\courseDetail.jsp" location="847,413" size="150,55" />
+  <webResource name="myCourse.jsp" path="/student\myCourse.jsp" location="42,415" size="150,55" />
+  <webResource name="chooseSuccess.jsp" path="/student\chooseSuccess.jsp" location="45,536" size="150,55" />
+  <webResource name="haveChoose.jsp" path="/student\haveChoose.jsp" location="45,649" size="150,55" />
+  <webResource name="chooseMax.jsp" path="/student\chooseMax.jsp" location="847,526" size="150,55" />
+  <webResource name="courseFill.jsp" path="/student\courseFill.jsp" location="847,639" size="150,55" />
+  <webResource name="cancelFail.jsp" path="/student\cancelFail.jsp" location="48,757" size="150,55" />
+  <webResource name="success.jsp" path="/user\success.jsp" location="850,742" size="150,55" />
+  <webResource name="lookScore.jsp" path="/student\lookScore.jsp" location="847,157" size="150,55" />
+</Struts2Diagram>
+

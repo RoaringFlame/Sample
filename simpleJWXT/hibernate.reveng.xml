@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table name="admin" catalog="db_simplejwxt" class="entity.Admin">
+		<primary-key>
+			<generator class="assigned"></generator>
+		</primary-key>
+	</table>
+	<table name="course" catalog="db_simplejwxt"
+		class="entity.Course">
+		<primary-key>
+			<generator class="assigned"></generator>
+		</primary-key>
+	</table>
+	<table name="score" catalog="db_simplejwxt" class="entity.Score">
+		<primary-key>
+			<generator class="assigned"></generator>
+		</primary-key>
+	</table>
+	<table name="student" catalog="db_simplejwxt"
+		class="entity.Student">
+		<primary-key>
+			<generator class="assigned"></generator>
+		</primary-key>
+	</table>
+<table name="teacher" catalog="db_simplejwxt" class="entity.Teacher">
+	<primary-key>
+		<generator class="assigned"></generator>
+	</primary-key>
+</table>
+</hibernate-reverse-engineering>
