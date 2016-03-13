@@ -1,7 +1,6 @@
-/.struts.mex
 /action/
+/web/
+/core/
+/userManager/
+/listener/
 /config/
-/dao/
-/entity/
-/hibernate.cfg.xml
-/struts.xml

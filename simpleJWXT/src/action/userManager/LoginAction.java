@@ -19,18 +19,19 @@ public class LoginAction extends ActionSupport {
 
 	private static final long serialVersionUID = 1L;
 
-	private String username;
+	private Integer username;
 	private String password;
+	private String incode;
 	private int flag;
 
 	HttpServletRequest request = ServletActionContext.getRequest();
 	HttpSession session = request.getSession();
 
-	public String getUsername() {
+	public Integer getUsername() {
 		return username;
 	}
 
-	public void setUsername(String username) {
+	public void setUsername(Integer username) {
 		this.username = username;
 	}
 
@@ -42,6 +43,14 @@ public class LoginAction extends ActionSupport {
 		this.password = password;
 	}
 
+	public String getIncode() {
+		return incode;
+	}
+
+	public void setIncode(String incode) {
+		this.incode = incode;
+	}
+
 	public int getFlag() {
 		return flag;
 	}
@@ -51,16 +60,30 @@ public class LoginAction extends ActionSupport {
 	}
 
 	public String execute() {
-		int index = username.length();
-		int no = Integer.parseInt(username);
+		// 解决验证码
+		if (session.getAttribute("logCount") != null) {
+			int count = (Integer) session.getAttribute("logCount");
+			if (count > 2) {
+				String var = (String) session.getAttribute("rand");
+				if (!incode.equals(var)) {
+					return INPUT;
+				}
+			}
+			session.setAttribute("logCount", ++count);
+		} else {
+			session.setAttribute("logCount", 1);
+		}
 
-		if(index == 10){
+		int index = username.toString().length();
+		int no = username;
+
+		if (index == 10) {
 			Student student = new Student();
 			student.setSno(no);
 			student.setPassword(password);
 			StudentDao sDao = new StudentDao();
 			Student stu = sDao.studentLogin(student);
-			if(stu!=null){
+			if (stu != null) {
 				this.setFlag(1);
 				session.setAttribute("flag", 1);
 				session.setAttribute("sid", stu.getSid());
@@ -68,7 +91,7 @@ public class LoginAction extends ActionSupport {
 				return SUCCESS;
 			}
 		}
-		
+
 		if (index == 8) {
 			Teacher teacher = new Teacher();
 			teacher.setTno(no);
@@ -83,7 +106,7 @@ public class LoginAction extends ActionSupport {
 				return SUCCESS;
 			}
 		}
-		
+
 		if (index == 6) {
 			Admin admin = new Admin();
 			admin.setAno(no);
@@ -98,7 +121,7 @@ public class LoginAction extends ActionSupport {
 				return SUCCESS;
 			}
 		}
-		
+
 		return INPUT;
 	}
 

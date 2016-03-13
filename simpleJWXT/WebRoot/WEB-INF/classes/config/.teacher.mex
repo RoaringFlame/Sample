@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <webResource name="success.jsp" path="/user\success.jsp" location="46,289" size="150,55" />
+  <webResource name="error.jsp" path="/user\error.jsp" location="46,401" size="150,55" />
+  <webResource name="tinformation.jsp" path="/teacher\tinformation.jsp" location="53,94" size="150,55" />
+  <webResource name="tchangeInfo.jsp" path="/teacher\tchangeInfo.jsp" location="47,187" size="150,55" />
+  <webResource name="regiestCourse.jsp" path="/teacher\regiestCourse.jsp" location="850,214" size="150,55" />
+  <webResource name="allCourse.jsp" path="/teacher\allCourse.jsp" location="849,100" size="150,55" />
+  <webResource name="allstudent.jsp" path="/teacher\allstudent.jsp" location="849,384" size="150,55" />
+  <webResource name="logScore.jsp" path="/teacher\logScore.jsp" location="846,601" size="150,55" />
+  <package name="Teacher" location="259,95" size="535,668">
+    <action name="logScore" location="62,599" size="131,62">
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="error.jsp" />
+      </result>
+      <result name="allScore">
+        <resourceEdge source="allScore" routing="0" target="tscpageAction" namespace="" />
+      </result>
+    </action>
+    <action name="tdelStudent" location="66,379" size="122,62">
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="error.jsp" />
+      </result>
+      <result name="allStudent">
+        <resourceEdge source="allStudent" routing="0" target="tspageAction" namespace="" />
+      </result>
+    </action>
+    <action name="studentScore" location="243,524" size="112,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="logScore.jsp" />
+      </result>
+    </action>
+    <action name="tscpageAction" location="410,462" size="115,41">
+      <result name="allStudentScore">
+        <resourceEdge source="allStudentScore" routing="0" target="studentScore" namespace="" />
+      </result>
+    </action>
+    <action name="tAllStudent" location="245,309" size="112,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="allstudent.jsp" />
+      </result>
+    </action>
+    <action name="tspageAction" location="406,234" size="113,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="tAllStudent" namespace="" />
+      </result>
+    </action>
+    <action name="lookCourse" location="345,101" size="128,62">
+      <result name="registCourse">
+        <resourceEdge source="registCourse" routing="0" target="regiestCourse.jsp" />
+      </result>
+      <result name="allCourse">
+        <resourceEdge source="allCourse" routing="0" target="allCourse.jsp" />
+      </result>
+    </action>
+    <action name="tgetInfo" location="104,91" size="135,104">
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+      <result name="saveSuccess">
+        <resourceEdge source="saveSuccess" routing="0" target="success.jsp" />
+      </result>
+      <result name="changeInfo">
+        <resourceEdge source="changeInfo" routing="0" target="tchangeInfo.jsp" />
+      </result>
+      <result name="information">
+        <resourceEdge source="information" routing="0" target="tinformation.jsp" />
+      </result>
+    </action>
+  </package>
+</Struts2Diagram>
+

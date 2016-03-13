@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="Admin" location="274,10" size="517,1704">
+    <action name="spageAction" location="308,42" size="123,41">
+      <result name="allStudent">
+        <resourceEdge source="allStudent" routing="0" target="allStudent" namespace="" />
+      </result>
+    </action>
+    <action name="allStudent" location="101,110" size="119,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="allStudent.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="addStudent" location="102,487" size="123,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="success.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="delStudent" location="102,231" size="121,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="spageAction" namespace="" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="updateStudent" location="102,356" size="121,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="spageAction" namespace="" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="getAction" location="319,221" size="130,125">
+      <result name="student">
+        <resourceEdge source="student" routing="0" target="updateStudent.jsp" />
+      </result>
+      <result name="teacher">
+        <resourceEdge source="teacher" routing="0" target="updateTeacher.jsp" />
+      </result>
+      <result name="course">
+        <resourceEdge source="course" routing="0" target="updateCourse.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+      <result name="getStudent">
+        <resourceEdge source="getStudent" routing="0" target="getStudent.jsp" />
+      </result>
+    </action>
+    <action name="tpageAction" location="309,600" size="127,41">
+      <result name="allTeacher">
+        <resourceEdge source="allTeacher" routing="0" target="allTeacher" namespace="" />
+      </result>
+    </action>
+    <action name="allTeacher" location="110,672" size="115,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="allTeacher.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="addTeacher" location="111,1005" size="116,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="success.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="delTeacher" location="111,782" size="117,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="tpageAction" namespace="" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="updateTeacher" location="112,891" size="116,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="tpageAction" namespace="" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="cpageAction" location="299,1118" size="135,41">
+      <result name="allCourse">
+        <resourceEdge source="allCourse" routing="0" target="allCourse" namespace="" />
+      </result>
+    </action>
+    <action name="allCourse" location="111,1191" size="122,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="allCourse.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="delCourse" location="112,1316" size="123,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="cpageAction" namespace="" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="updateCourse" location="113,1436" size="123,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="cpageAction" namespace="" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="addCourse" location="114,1564" size="121,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="success.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="error.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="error.jsp" path="/user\error.jsp" location="62,663" size="150,55" />
+  <webResource name="success.jsp" path="/user\success.jsp" location="856,684" size="150,55" />
+  <webResource name="allStudent.jsp" path="/admin\allStudent.jsp" location="73,113" size="150,55" />
+  <webResource name="updateStudent.jsp" path="/admin\updateStudent.jsp" location="871,138" size="150,55" />
+  <webResource name="getStudent.jsp" path="/admin\getStudent.jsp" location="875,467" size="150,55" />
+  <webResource name="allTeacher.jsp" path="/admin\allTeacher.jsp" location="62,1091" size="150,55" />
+  <webResource name="updateTeacher.jsp" path="/admin\updateTeacher.jsp" location="871,240" size="150,55" />
+  <webResource name="allCourse.jsp" path="/admin\allCourse.jsp" location="876,1118" size="150,55" />
+  <webResource name="updateCourse.jsp" path="/admin\updateCourse.jsp" location="870,341" size="150,55" />
+</Struts2Diagram>
+

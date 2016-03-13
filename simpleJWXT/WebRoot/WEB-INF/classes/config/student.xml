@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="Student" extends="struts-default">
+		<action name="getInfo" class="action.student.ManageInformation">
+			<result name="information">/student\information.jsp</result>
+			<result name="changeInfo">/student\changeInfo.jsp</result>
+			<result name="saveSuccess">/user\success.jsp</result>
+			<result name="error">/user\error.jsp</result>
+		</action>
+		<action name="scpageAction" class="action.userManager.PageAction"
+			method="chooseCourse">
+			<result name="allCourse" type="redirectAction">
+				<param name="pageNumber">${pageNumber}</param>
+				<param name="totalPage">${totalPage}</param>
+				<param name="actionName">courseInit</param>
+			</result>
+		</action>
+		<action name="courseInit" class="action.student.CourseInit">
+			<result name="allCourse">/student\allCourse.jsp</result>
+			<result name="showDetail">/student\courseDetail.jsp</result>
+			<result name="myCourse">/student\myCourse.jsp</result>
+		</action>
+		<action name="chooseCourse" class="action.student.ChooseCourse">
+			<result name="error">/user\error.jsp</result>
+			<result name="success">/student\chooseSuccess.jsp</result>
+			<result name="haveChoose">/student\haveChoose.jsp</result>
+			<result name="chooseMax">/student\chooseMax.jsp</result>
+			<result name="courseFill">/student\courseFill.jsp</result>
+		</action>
+		<action name="cancelCourse" class="action.student.ChooseCourse"
+			method="cancelCourse">
+			<result name="success">/user\success.jsp</result>
+			<result name="input">/user\error.jsp</result>
+			<result name="error">/student\cancelFail.jsp</result>
+		</action>
+		<action name="lookScore" class="action.student.LookScore">
+			<result name="success">/student\lookScore.jsp</result>
+		</action>
+		
+	</package>
+</struts>    
