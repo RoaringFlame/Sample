@@ -17,7 +17,7 @@
 				<interceptor-ref name="online"/>
 			</interceptor-stack>
 		</interceptors>
-		<!-- 将自定义的拦截器栈定义成默认拦截器栈 -->
+		<!-- 将自定义的拦截器栈定义成默认拦截器栈(仅包内有效) -->
 		<default-interceptor-ref name="jwxtStack"/>
 
 		<global-results>

@@ -72,6 +72,7 @@ body {
 												<s:fielderror>
 													<s:param>username</s:param>
 												</s:fielderror>	
+												
 												<tr>																									
 													<td width="21%" height="30"><div align="center">
 															<span class="STYLE3">用户</span>
